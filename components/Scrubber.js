@@ -4,10 +4,10 @@ import {
   View,
   Platform,
   StyleSheet,
-  Slider as RNSlider
-} from 'react-native'
-import Slider from 'react-native-slider'
 
+} from 'react-native'
+import Slider from '@react-native-community/slider';
+const thumbImage = require('../assets/thumb-white-15x15.png');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,7 +43,7 @@ const Scrubber = (props) => {
           trackClickable
         />
       :
-        <RNSlider
+ <Slider
           style={styles.slider}
           onValueChange={val => onSeek(val)}
           onSlidingComplete={val => onSeekRelease(val)}
